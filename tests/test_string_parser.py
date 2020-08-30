@@ -23,9 +23,9 @@ class TestStringParser(TestCase):
 
     def test_string_parser_valid_should_Pass(self):
         # arrange
-        data = 'FILESYSTEM OK -/ used space (9%) inode (3%) | fs=9% inode=3%'
+        data = 'FILESYSTEM OK -/ used space (9.5%) inode (3%) | fs=9% inode=3%'
         expected = {
-            'space': '9%',
+            'space': '9.5%',
             'inode': '3%',
             'fs': '9%'
         }
