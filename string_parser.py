@@ -3,8 +3,12 @@ import re
 
 # FILESYSTEM OK -/ used space (9%) inode (3%) | fs=9% inode=3%
 def string_parser(txt: str) -> str:
-    regex = 'space\s?\((?P<space>\d+\%)\)\s?inode\s?\((?P<inode>\d+\%)\)\s?\|\s?fs=(?P<fs>\d+\%)'
-    match = re.search(regex, txt)
+    space_regex = 'space\s?\((?P<space>\d+\%)\)\s?'
+    inode_regex = 'inode\s?\((?P<inode>\d+\%)\)\s?'
+    fs_regex = '\|\s?fs=(?P<fs>\d+\%)'
+
+    regex = re.compile(f'{space_regex}{inode_regex}{fs_regex}')
+    match = regex.search(txt)
 
     if match is None:
         return None

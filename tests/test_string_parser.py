@@ -8,6 +8,9 @@ class TestStringParser(TestCase):
     def setUp(self):
         self.sut = string_parser
 
+    def tearDown(self):
+        self.sut = None
+
     def test_string_parser_empty_should_fail(self):
         # arrange
         data = ''
@@ -32,6 +35,3 @@ class TestStringParser(TestCase):
 
         # assert
         self.assertEqual(actual, expected)
-
-    def test_string_parser(self):
-        pass
