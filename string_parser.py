@@ -1,4 +1,6 @@
 import re
+
+
 # FILESYSTEM OK -/ used space (9%) inode (3%) | fs=9% inode=3%
 def string_parser(txt: str) -> str:
     regex = 'space\s?\((?P<space>\d+\%)\)\s?inode\s?\((?P<inode>\d+\%)\)\s?\|\s?fs=(?P<fs>\d+\%)'
@@ -14,5 +16,3 @@ def string_parser(txt: str) -> str:
     }
 
     return result
-
-

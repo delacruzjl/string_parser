@@ -1,12 +1,14 @@
 import unittest
+from unittest import TestCase
 
 from string_parser import string_parser
 
-class TestStringParser(unittest.TestCase):
+
+class TestStringParser(TestCase):
     def setUp(self):
         self.sut = string_parser
 
-    def test_null_should_fail(self):
+    def test_string_parser_empty_should_fail(self):
         # arrange
         data = ''
 
@@ -16,7 +18,7 @@ class TestStringParser(unittest.TestCase):
         # assert
         self.assertEqual(actual, None)
 
-    def test_valid_should_Pass(self):
+    def test_string_parser_valid_should_Pass(self):
         # arrange
         data = 'FILESYSTEM OK -/ used space (9%) inode (3%) | fs=9% inode=3%'
         expected = {
@@ -30,3 +32,6 @@ class TestStringParser(unittest.TestCase):
 
         # assert
         self.assertEqual(actual, expected)
+
+    def test_string_parser(self):
+        pass
