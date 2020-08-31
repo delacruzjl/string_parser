@@ -1,6 +1,6 @@
 # String_Parser REGEX
 
-extracts the percentages from a log line.
+Extracts the percentages from a log line using regular expressions groups.
 
 ## requirement
 
